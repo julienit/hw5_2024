@@ -191,8 +191,6 @@ a:visited {
                 display: flex;
                 /* Align items in a row */
                 flex-direction: row;
-                /* Remove the bullet points and default styling */
-                list-style: none;
               }
 
             .nav_links li {
