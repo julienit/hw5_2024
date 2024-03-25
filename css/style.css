@@ -139,8 +139,8 @@ a:visited {
             display: flex;
             /*Set the direction of the card to a row layout/horizontal*/
             flex-direction: row;
-            /*Set the alignment of the card items to the center and horizontally*/
-            align-items: center;
+            /*Set the alignment of the card items to align at the bottom*/
+            align-items: flex-end;
             justify-content: center;
         }
 
