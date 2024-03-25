@@ -1,0 +1,231 @@
+/* Edit the body paragraph */
+
+/* Animate the logo using keyframes */
+@keyframes logo {
+    /* Start the animation at 25 pixels and 0 opacity */
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+    /* End the animation at 475 pixels and 1 opacity */
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    /* Make animation last 5 seconds */
+    animation: logo 5s forwards;
+}
+
+body {
+    /*Update font to Poppins with sans-serif as a backup */
+    font-family: 'Poppins', sans-serif;
+    /*Update backgroung image  */
+    background-image: url(../images/concrete_seamless.png);
+    /*Add backup background color */
+    background-color: #f1f1f1;
+}
+
+/* Edit the header tag */
+header {
+    /*Use flex to align header items (logo and nav)*/
+    display: flex;
+    /*Align header items vertically at the center*/
+    align-items: center;
+    /*Stack the header items vertically within the container */
+    flex-direction: column;
+}
+
+/* Edit the nav_links class */
+.nav_links {
+    /*Use flex to align nav items (links)*/
+    display: flex;
+    /*Set the direction of nav items to a column layout/vertical*/
+    flex-direction: column;
+}
+
+/*Style the links to remain the same color whether visited or not*/
+
+/*visited link styling*/
+a:visited {
+    color: #0000EE;
+}
+
+/* Style header elements that are direct children of a card class */
+.card > header {
+    /*Change the background color for card header*/
+    background: #288088;
+    /*Add a border around the card header*/
+    border: solid 2px #45ADAD;
+    /*Add top and bottom padding */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*Add a border-radius on top, left, and right corners*/
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Style the card class */
+  .card {
+    /*Set the initial sizing of the card*/
+    flex-basis: 450px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    /*set curve to the card*/
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+
+/* Style the pricing class */
+.pricing {
+    /*Assign the flex direction for your card*/
+    display: flex;
+    /*Set the direction of the card to a column layout/vertical*/
+    flex-direction: column;
+    /*Set the alignment of the card items to the center and vertically*/
+    align-content: center;
+    justify-content: center;
+}
+
+/* Style the images in gallery*/
+.gallery img{
+    /*Add a border around the images*/
+    border: solid 10px #50C7C7;
+    /*Add a margin on all four sides of the images*/
+    margin: 10px;
+    /*Add a width to the images*/
+    width: 300px;
+}
+
+.gallery {
+    /*Assign the flex direction for your gallery*/
+    display: flex;
+    flex-wrap: wrap;
+    /*Set the alignment of the gallery items to the center and horizontally*/
+    align-content: center;
+    justify-content: center;
+}
+
+/* Adjust the layout for screens greater than 900px */
+@media (min-width: 900px) {
+    /* Update the all header tags */
+        header {
+            /*Change the header tag to a row*/
+            display: flex;
+            flex-direction: row;
+            /*align items far left*/
+            justify-content: space-between;
+        }
+        /* Update the nav_links class */
+        .nav_links {
+            /*Change the nav_links class to a row*/
+            display: flex;
+            flex-direction: row;
+            /*align items far right*/
+            justify-content: flex-end;
+        }
+        /* Update the card class */
+        .card {
+            /*Set the initial sizing of the card*/
+            flex-basis: 275px;
+            flex-grow: 0;
+        }
+        
+        /* Update the pricing class */
+        .pricing {
+            /*Assign the flex direction for your card*/
+            display: flex;
+            /*Set the direction of the card to a row layout/horizontal*/
+            flex-direction: row;
+            /*Set the alignment of the card items to the center and horizontally*/
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Modify the first header to remain at the top of the page */
+        body > header:first-of-type {
+            /* Set the header to remain in the same position when scrolling */
+            position: fixed;
+            /*Ensure header spans entire width and is positioned at the top of the page */
+            top: 0;
+            left: 0;
+            width: 100%;
+            /*Ensure header is above all other elements */
+            z-index: 999;
+        }
+        /* Add margin to the main content to prevent overlap */
+        main {
+            margin-top: 100px;
+        }
+       
+        /* Add prefers reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            #logo {
+                animation: none;
+            }
+        }
+}
+        /* Modify content for the page being printed */
+        @media print and (orientation: portrait) {
+            body {
+            /* Use Arial with a backup value of Helvetica */
+            font-family: Arial, Helvetica;
+            /* Remove the background image */
+            background-image: none;
+            }
+
+            /*Update nav and nav_links to display as a row */
+            .nav {
+                /* Use flex to trun nav into flex container */
+                display: flex;
+                /* Align items horizontally */
+                justify-content: space-between;
+                /* Align items vertically */
+                align-items: center; 
+            }
+
+            .nav_links {
+                /* Use flex to turn nav_links into flex container */
+                display: flex;
+                /* Align items in a row */
+                flex-direction: row;
+                /* Remove the bullet points and default styling */
+                list-style: none;
+              }
+
+            .nav_links li {
+                /* Add padding to the list items to create space*/
+                margin: 0 100px;
+            }
+
+            /* Edit the pricing class so that the elements align along the bottom */
+            .pricing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            }
+
+            /* Add a border around the card class */
+            .card {
+            border: solid 2px #45ADAD;
+            /*Use a flex-basis of 325px */
+            flex-basis: 325px;
+            }
+
+            /*Hide the gallery heading */
+            #gallery {
+            display: none;
+            }
+            /*Hide the gallery img */
+            .gallery img {
+            display: none;
+            }
+
+            /*Add thumbs up emoji after second list item in card */
+            .card > ul li:nth-of-type(2)::after {
+            content: "👍";
+            }
+        }
