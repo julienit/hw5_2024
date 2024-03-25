@@ -139,8 +139,8 @@ a:visited {
             display: flex;
             /*Set the direction of the card to a row layout/horizontal*/
             flex-direction: row;
-            /*Set the alignment of the card items to align at the bottom*/
-            align-items: flex-end;
+            /*Set the alignment of the card items to align center*/
+            align-items: center;
             justify-content: center;
         }
 
@@ -211,6 +211,7 @@ a:visited {
             border: solid 2px #45ADAD;
             /*Use a flex-basis of 325px */
             flex-basis: 325px;
+            align-items: flex-end;
             }
 
             /*Hide the gallery heading */
